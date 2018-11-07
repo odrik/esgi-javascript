@@ -79,9 +79,17 @@ function yoda(string) {
 }
 
 function prop_access(obj, key) {
-	if (key.length > 0 ) {
+	if (key != null && key.length > 0) {
 		return key.split(".").reduce(function(o, x) {
-	        return (typeof o == "undefined" || o === null) ? o : o[x];
+	        if (typeof o == "undefined" || o === null) {
+	        	return o 
+	     	} else {
+	         	if (typeof o[x] == "undefined" || o[x] === null) {
+	         		return (key+" not exist");
+	     		} else {
+	     			return o[x]; 
+	     		}
+	     	}
 	    }, obj);
 	} else {
 		return obj;
@@ -115,6 +123,6 @@ var prairie = {
 	}
 }
 //console.log(vig("fERg", "TEST"));
-console.log(prop_access(prairie, "grr"));
+//console.log(prop_access(prairie, "animal.gender"));
 
 
