@@ -78,10 +78,15 @@ function yoda(string) {
 	}
 }
 
-function prop_access() {
-
+function prop_access(obj, key) {
+	if (key.length > 0 ) {
+		return key.split(".").reduce(function(o, x) {
+	        return (typeof o == "undefined" || o === null) ? o : o[x];
+	    }, obj);
+	} else {
+		return obj;
+	}
 }
-
 
 function vig(input, key) {
 	var output = "";
@@ -102,7 +107,14 @@ function vig(input, key) {
 	return output;
 }
 
-
+var prairie = {
+	"animal": { 
+		"type": {
+			"name": "dog"
+		}
+	}
+}
 //console.log(vig("fERg", "TEST"));
+console.log(prop_access(prairie, "grr"));
 
 
