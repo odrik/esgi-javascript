@@ -79,20 +79,24 @@ function yoda(string) {
 }
 
 function prop_access(obj, key) {
-	if (key != null && key.length > 0) {
-		return key.split(".").reduce(function(o, x) {
-	        if (typeof o == "undefined" || o === null) {
-	        	return o 
-	     	} else {
-	         	if (typeof o[x] == "undefined" || o[x] === null) {
-	         		console.log(key+" not exist"); return;
-	     		} else {
-	     			return o[x]; 
-	     		}
-	     	}
-	    }, obj);
+	if (obj != null) {
+		if (key != null && key.length > 0) {
+			return key.split(".").reduce(function(o, x) {
+		        if (typeof o == "undefined" || o === null) {
+		        	return o 
+		     	} else {
+		         	if (typeof o[x] == "undefined" || o[x] === null) {
+		         		console.log(key+" not exist"); return;
+		     		} else {
+		     			return o[x]; 
+		     		}
+		     	}
+		    }, obj);
+		} else {
+			return obj;
+		}
 	} else {
-		return obj;
+		console.log(key+" not exist"); return;
 	}
 }
 
@@ -123,6 +127,6 @@ var prairie = {
 	}
 }
 //console.log(vig("fERg", "TEST"));
-console.log(prop_access(prairie, "animal.gender"));
+console.log(prop_access(null, "animal.gender"));
 
 
