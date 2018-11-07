@@ -78,6 +78,31 @@ function yoda(string) {
 	}
 }
 
-//console.log(yoda("yoda m Luke"));
+function prop_access() {
+
+}
+
+
+function vig(input, key) {
+	var output = "";
+	for (var i = 0, j = 0; i < input.length; i++) {
+		var c = input.charCodeAt(i);
+		var l = input[i];
+		if (l == l.toUpperCase()) {
+			output += String.fromCharCode((c - 65 + key[j % key.length].charCodeAt()) % 26 + 65);
+			j++;
+		} else if (l == l.toLowerCase()) {
+			output += String.fromCharCode((c - 97 + key[j % key.length].charCodeAt()) % 26 + 97);
+			j++;
+		} else {
+			output += input.charAt(i);
+		}
+	}
+	console.log(output)
+	return output;
+}
+
+
+//console.log(vig("fERg", "TEST"));
 
 
