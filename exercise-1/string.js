@@ -20,7 +20,7 @@ function capitalize(string) {
 function camelCase(string) {
 	if (typeof string === "string") {
 		return string.toLowerCase()
-    .split(' ')
+    .split(/_| /)
     .map((word) => word.charAt(0).toUpperCase() + word.substring(1)).join('');
     } else {
     	return "";
@@ -78,6 +78,6 @@ function yoda(string) {
 	}
 }
 
-//console.log(leet("bonsoir lae kr aunb yere"));
+console.log(camelCase("ToggleCase is_the coolest"));
 
 
