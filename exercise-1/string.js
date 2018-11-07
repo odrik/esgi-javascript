@@ -1,4 +1,4 @@
-function ucFirst(string) {
+function ucfirst(string) {
 	if (typeof string === "string") {
     	return string.charAt(0).toUpperCase() + string.slice(1);
     } else {
@@ -47,12 +47,12 @@ function leet(string){
 	  Y : '7'
 	}
 	if (typeof string === "string") {
-		var arr = string.toUpperCase().split('');
+		var arr = string.split('');
 		for (var i in arr){
-			if (obj[arr[i]] == undefined) {
+			if (obj[arr[i].toUpperCase()] == undefined) {
 				arr[i] = arr[i];
 			} else {
-				arr[i] = obj[arr[i]];
+				arr[i] = obj[arr[i].toUpperCase()];
 			}
 		}
 		return arr.join('');
@@ -78,6 +78,6 @@ function yoda(string) {
 	}
 }
 
-//console.log(ucFirst("bonsoir lae kr aunb yere"));
+//console.log(leet("bonsoir lae kr aunb yere"));
 
 
