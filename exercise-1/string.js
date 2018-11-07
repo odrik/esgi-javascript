@@ -85,7 +85,7 @@ function prop_access(obj, key) {
 	        	return o 
 	     	} else {
 	         	if (typeof o[x] == "undefined" || o[x] === null) {
-	         		return (key+" not exist");
+	         		console.log(key+" not exist"); return;
 	     		} else {
 	     			return o[x]; 
 	     		}
@@ -123,6 +123,6 @@ var prairie = {
 	}
 }
 //console.log(vig("fERg", "TEST"));
-//console.log(prop_access(prairie, "animal.gender"));
+console.log(prop_access(prairie, "animal.gender"));
 
 
