@@ -72,12 +72,12 @@ function verlan(string) {
 
 function yoda(string) {
 	if (typeof string === "string") {
-		return string.split("").reverse().join("").split(" ").reverse().join(" ").split(" ").reverse().join(" ");
+		return string.split(" ").reverse().join(" ");
 	} else {
 		return "";
 	}
 }
 
-console.log(camelCase("ToggleCase is_the coolest"));
+//console.log(yoda("yoda m Luke"));
 
 
