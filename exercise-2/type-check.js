@@ -17,7 +17,6 @@ function type_check_v1(value, type) {
     return false;
 }
 
-
 function type_check_v2(value, type) {
     if (type.type && !type_check_v1(value, type.type)) {
         return false;
@@ -31,10 +30,10 @@ function type_check_v2(value, type) {
     return true;
 }
 
-console.log(typeof la);
-console.log(type_check_v2({prop1: 1}, {type: "object"}));
-console.log(type_check_v2("foo", {type: "string", value: "foo"}));
-console.log(type_check_v2("bar", {type: "string", value: "foo"}));
-console.log(type_check_v2(3, {enum: ["foo", "bar", 3]}));
+//console.log(typeof la);
+//console.log(type_check_v2({prop1: 1}, {type: "object"}));
+//console.log(type_check_v2("foo", {type: "string", value: "foo"}));
+//console.log(type_check_v2("bar", {type: "string", value: "foo"}));
+//console.log(type_check_v2(3, {enum: ["foo", "bar", 3]}));
 
 
