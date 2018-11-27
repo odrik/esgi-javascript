@@ -83,7 +83,7 @@ function prop_access(obj, key) {
 		if (key != null && key.length > 0) {
 			return key.split(".").reduce(function(o, x) {
 		        if (typeof o == "undefined" || o === null) {
-		        	return o 
+		        	return o; 
 		     	} else {
 		         	if (typeof o[x] == "undefined" || o[x] === null) {
 		         		console.log(key+" not exist"); return;
@@ -126,7 +126,8 @@ var prairie = {
 		}
 	}
 }
-//console.log(vig("fERg", "TEST"));
-console.log(prop_access(null, "animal.gender"));
+
+//console.log(vig("diplomatie", "B421L44BLB464BL4549"));
+console.log(prop_access(prairie, "animal.type"));
 
 
