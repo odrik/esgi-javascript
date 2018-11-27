@@ -17,6 +17,15 @@ function type_check_v1(value, type) {
     return false;
 }
 
+function checkArray(value, type) {
+    for (var prop in type) {
+        if (type[prop] === value) {
+            return true;
+        }
+    }
+    return false;
+}
+
 function type_check_v2(value, type) {
     if (type.type && !type_check_v1(value, type.type)) {
         return false;
