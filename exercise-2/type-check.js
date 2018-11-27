@@ -11,14 +11,26 @@ function type_check_v1(value, type) {
     if (value === null && type === "null") {
         return true;
     }
-    if (Array.isArray(value) && type === "array") {
+    if (Array.isArray(value) && type.toLowerCase() === "array") {
         return true;
     }
     return false;
 }
 
-function teste() {
-	return 1;
+function type_check_v2(value, type) {
+    if (type.type && !type_check_v1(value, type.type)) {
+        return false;
+    }
+
+    if (type.value && type.value !== value) {
+        return false;
+    }
+
+    if (type.enum && checkArray(value, type.enum)) {
+        return false;
+    }
+
+    return true;
 }
 
 console.log(typeof teste);
