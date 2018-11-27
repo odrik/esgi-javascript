@@ -34,10 +34,15 @@ function type_check_v2(value, type) {
         return false;
     }
     if (type.enum && checkArray(value, type.enum)) {
-        return false;
+        return true;
     }
     return true;
 }
 
-//console.log(typeof teste);
-//console.log(type_check_v1(teste, "function"));
+console.log(typeof la);
+console.log(type_check_v2({prop1: 1}, {type: "object"}));
+console.log(type_check_v2("foo", {type: "string", value: "foo"}));
+console.log(type_check_v2("bar", {type: "string", value: "foo"}));
+console.log(type_check_v2(3, {enum: ["foo", "bar", 3]}));
+
+
