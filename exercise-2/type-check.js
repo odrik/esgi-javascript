@@ -21,17 +21,14 @@ function type_check_v2(value, type) {
     if (type.type && !type_check_v1(value, type.type)) {
         return false;
     }
-
     if (type.value && type.value !== value) {
         return false;
     }
-
     if (type.enum && checkArray(value, type.enum)) {
         return false;
     }
-
     return true;
 }
 
-console.log(typeof teste);
-console.log(type_check_v1(teste, "function"));
+//console.log(typeof teste);
+//console.log(type_check_v1(teste, "function"));
