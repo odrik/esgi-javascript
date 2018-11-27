@@ -17,14 +17,6 @@ function type_check_v1(value, type) {
     return false;
 }
 
-function checkArray(value, type) {
-    for (var prop in type) {
-        if (type[prop] === value) {
-            return true;
-        }
-    }
-    return false;
-}
 
 function type_check_v2(value, type) {
     if (type.type && !type_check_v1(value, type.type)) {
@@ -33,7 +25,7 @@ function type_check_v2(value, type) {
     if (type.value && type.value !== value) {
         return false;
     }
-    if (type.enum && checkArray(value, type.enum)) {
+    if (type.enum && type.enum.indexOf(value)) {
         return true;
     }
     return true;
